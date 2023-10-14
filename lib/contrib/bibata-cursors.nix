@@ -11,11 +11,11 @@ pkgs.stdenv.mkDerivation {
     sha256 = "sha256-0eCAfm/MWXv6BbCl2vbVbvgv8DiUH09TAUhoKq7Ow0k=";
   };
 
-  buildInputs = with pkgs; [ clickgen attrs ];
+  buildInputs = with pkgs.pythonPackages; [ clickgen attrs ];
 
   phases = [ "buildPhase" "installPhase" ];
 
-  prebuildPhase = ''
+  buildPhase = ''
     cat > build.toml << EOF
     {
       "Bibata-Modern-Classic": {
@@ -63,9 +63,7 @@ pkgs.stdenv.mkDerivation {
       }
     }
     EOF
-  '';
 
-  buildPhase = ''
     ctgen build.toml -p x11 -d 'bitmaps/Bibata-Modern-Classic' -n 'Bibata-Modern-Classic' -c 'Black and rounded edge Bibata cursors.'
     ctgen build.toml -p x11 -d 'bitmaps/Bibata-Modern-Ice' -n 'Bibata-Modern-Ice' -c 'White and rounded edge Bibata cursors.'
 
