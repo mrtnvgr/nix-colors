@@ -13,7 +13,7 @@ pkgs.stdenv.mkDerivation {
 
   buildInputs = with pkgs.python3Packages; [ clickgen attrs ];
 
-  phases = [ "buildPhase" "installPhase" ];
+  phases = [ "unpackPhase" "buildPhase" "installPhase" ];
 
   buildPhase = ''
     cat > render.json << EOF
