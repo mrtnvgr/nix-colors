@@ -8,6 +8,7 @@ pkgs.stdenv.mkDerivation {
     owner = "ful1e5";
     repo = "Bibata_Cursor";
     rev = "f9704f65856d7675e27b7ce9b5d7833106f9771d";
+    sha256 = "ujAKZMbfABaBiAogmtTqOx0LUpeb4cA532RWvf9DhdY=";
   };
 
   buildInputs = with pkgs.python3Packages; [ clickgen attrs ];
@@ -62,7 +63,6 @@ pkgs.stdenv.mkDerivation {
       }
     }
     EOF
-    cd /build
 
     ctgen build.toml -p x11 -d 'bitmaps/Bibata-Modern-Classic' -n 'Bibata-Modern-Classic' -c 'Black and rounded edge Bibata cursors.'
     ctgen build.toml -p x11 -d 'bitmaps/Bibata-Modern-Ice' -n 'Bibata-Modern-Ice' -c 'White and rounded edge Bibata cursors.'
