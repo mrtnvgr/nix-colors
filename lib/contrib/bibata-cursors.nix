@@ -16,7 +16,7 @@ pkgs.stdenv.mkDerivation {
   phases = [ "buildPhase" "installPhase" ];
 
   buildPhase = ''
-    cat > build.toml << EOF
+    cat > render.json << EOF
     {
       "Bibata-Modern-Classic": {
         "dir": "svg/modern",
