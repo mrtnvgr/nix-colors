@@ -13,8 +13,6 @@ pkgs.stdenv.mkDerivation {
 
   buildInputs = with pkgs.python3Packages; [ clickgen attrs ];
 
-  phases = [ "buildPhase" "installPhase" ];
-
   buildPhase = ''
     cat > render.json << EOF
     {
@@ -63,10 +61,6 @@ pkgs.stdenv.mkDerivation {
       }
     }
     EOF
-
-    # Debug info
-    ls -la
-    pwd
 
     ctgen build.toml -p x11 -d 'bitmaps/Bibata-Modern-Classic' -n 'Bibata-Modern-Classic' -c 'Black and rounded edge Bibata cursors.'
     ctgen build.toml -p x11 -d 'bitmaps/Bibata-Modern-Ice' -n 'Bibata-Modern-Ice' -c 'White and rounded edge Bibata cursors.'
