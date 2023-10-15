@@ -7,13 +7,11 @@ pkgs.stdenv.mkDerivation {
   src = pkgs.fetchFromGitHub {
     owner = "ful1e5";
     repo = "Bibata_Cursor";
-    rev = "f9704f65856d7675e27b7ce9b5d7833106f9771d";
-    sha256 = "ujAKZMbfABaBiAogmtTqOx0LUpeb4cA532RWvf9DhdY=";
+    rev = "v2.0.3";
+    sha256 = "zCk7qgPeae0BfzhxxU2Dk1SOWJQOxiWyJuzH/ri+Gq4=";
   };
 
   buildInputs = with pkgs.python3Packages; [ clickgen attrs ];
-
-  # TODO: https://github.com/NixOS/nixpkgs/issues/260993
 
   buildPhase = ''
     cat > render.json << EOF
