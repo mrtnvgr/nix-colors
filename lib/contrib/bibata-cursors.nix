@@ -13,8 +13,6 @@ pkgs.stdenv.mkDerivation {
 
   buildInputs = with pkgs.python3Packages; [ clickgen attrs ];
 
-  # TODO: https://github.com/NixOS/nixpkgs/issues/260993
-
   buildPhase = ''
     cat > render.json << EOF
     {
