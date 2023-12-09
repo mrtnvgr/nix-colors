@@ -61,11 +61,17 @@ rec {
   # };
   shellThemeFromScheme = import ./shell-theme.nix { inherit pkgs; };
 
-  # Takes a scheme, outputs customized bibata cursors
+  # Takes name and colors, outputs customized bibata cursors
   # Example:
   # home.pointerCursor = {
-  #   package = bibataCursorsFromScheme { scheme = config.colorScheme };
-  #   name = "Bibata-Modern-Ice";
+  #   package = bibataCursorsFromScheme {
+  #     name = "Bibata-${config.colorScheme.slug}"
+  #     type = "modern"; # or "classic"
+  #     base = config.colorScheme.colors.base00;
+  #     outline = config.colorScheme.colors.base05;
+  #     watch_bg = config.colorScheme.colors.base00;
+  #   };
+  #   name = "Bibata-${config.colorScheme.slug}";
   # };
   bibataCursorsFromScheme = import ./bibata-cursors.nix { inherit pkgs; };
 }
