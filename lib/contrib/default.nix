@@ -73,5 +73,5 @@ rec {
   #   };
   #   name = "Bibata-${config.colorScheme.slug}";
   # };
-  bibataCursorsFromScheme = import ./bibata-cursors.nix { inherit pkgs; };
+  bibataCursorsFromColors = import ./bibata-cursors.nix { inherit pkgs; };
 }
